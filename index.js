@@ -118,14 +118,20 @@ client.on("message", async message => {
     message.reply("```Create #annoucements first and do +++chatto on the channel you want message sand to #chatto```");
     return;
   }
-    let chatchannel = message.guild.channels.find(`name`, "chatto");
-    if(!chatchannel) return message.channel.send("you need create channel #chatto to chat !");
+    let chatchannel = message.guild.channels.find(`name`, "chat");
+    if(!chatchannel) return message.channel.send("you need create channel #chat to chat !");
     message.delete().catch(O_o=>{});
     chatchannel.send(args.join(" "));
 
    }
 
-
+if(command === "say") {   
+      message.delete()
+      if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("**You do not have permission to do that!**");
+      let say = args.join(' ')
+message.channel.send(say);
+}
+      
   if(command === "ctc" || command === "create textchannel") {
   let logs = args.join(" ");
   if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("**You do not have permission to do that!**");
