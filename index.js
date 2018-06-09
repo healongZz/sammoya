@@ -67,8 +67,8 @@ client.on("message", async message => {
     let target = message.mentions.users.first() || message.author;
     let wait = await message.channel.send('Jam Tix Anh Ping Edit.....xD')
     let userAvatar = (target.displayAvatarURL);
-    if (['jpg', 'jpeg', 'gif', 'png', 'webp'].some(x => args.join(' ').includes(x))) {
-        userAvatar = args.join(' ').replace(/gif|webp/g, 'png')
+    if (['jpg', 'jpeg', 'gif', 'png'].some(x => args.join(' ').includes(x))) {
+        userAvatar = args.join(' ').replace(/gif|webp/g, 'jpg')
     }
     let res = await snekfetch.get(`https://discord.services/api/magik?url=${userAvatar}`)
             await wait.delete()
@@ -81,7 +81,7 @@ client.on("message", async message => {
    if(command == "annto") {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
     if(args[0] == "help"){
-    message.reply("```Create #annoucements first and do k!chatembed on the channel you want message sand to #announcements```");
+    message.reply("```Create #annoucements first and do +++annto on the channel you want message sand to #announcements```");
     return;
   }
     let chatchannel = message.guild.channels.find(`name`, "announcements");
@@ -94,7 +94,7 @@ client.on("message", async message => {
    if(command == "chatto") {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
     if(args[0] == "help"){
-    message.reply("```Create #annoucements first and do k!chatembed on the channel you want message sand to #chatto```");
+    message.reply("```Create #annoucements first and do +++chatto on the channel you want message sand to #chatto```");
     return;
   }
     let chatchannel = message.guild.channels.find(`name`, "chatto");
@@ -125,7 +125,7 @@ client.on("message", async message => {
 
     if(command === "setwatching" || command === "sw") {
    //  if (message.author.id !== ('356510829920780289')) return message.channel.send("**You Can\'t Change Watching BOT | Dev is • TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881**").then(msg => msg.delete(8000));
- if (!['356510829920780289', '424916247696900135',].includes(message.author.id)) return message.reply(`Heng Ot Mean Permissions Use Commands Ng Te !`).then(msg => msg.delete(9000));   
+ if (!['356510829920780289', '424916247696900135',].includes(message.author.id)) return message.reply(`Sorry U Dont Have Permission To Do This Command Only Dev lets do +++dev for see who is dev`).then(msg => msg.delete(9000));   
     const status = args.join(' ');
      if (status.length === 0) {
        const embed = new Discord.RichEmbed()
@@ -413,9 +413,9 @@ client.on("message", async message => {
     .setAuthor(`${config.prefix}commands`, message.author.avatarURL)
     .setColor('#FFE8A0')
     .addField("Moderation", "`clear` `say` `newvideo - nv` `youtubechannel - ytc` `chatto` `annto` ")
-    .addField("Info", "`serverinfo`  `serverrule`  `topinvites` `dev`")
+    .addField("Info", "`serverinfo`  `serverrule`  `inviteslist` `dev`")
     .addField("General", "`ping` `avatar` `emojilist` ")
-    .addField("Fun", "`bonf` `meme`  `status`  `get`  `ranfom`")
+    .addField("Fun", "`bond` `meme`  `status`  `get`  `random`")
     .setFooter(`Requested by : ${message.author.tag}`);
 
     return message.channel.send(serverEmbed);
@@ -450,7 +450,7 @@ if(command === "dev" || command === "developer") {
   message.channel.send(dev);
 }
 
-     if(command === "topinvites" || command === "invites") {
+     if(command === "topinvites" || command === "inviteslist") {
     let invites = await message.guild.fetchInvites().catch(error => { // This will store all of the invites into the variable
         return message.channel.send('Sorry, I don\'t have the proper permissions to view invites!');
     }) // This will store all of the invites into the variable
