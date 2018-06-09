@@ -131,7 +131,7 @@ client.on("message", async message => {
 
    }
 
-   if(command == "chatto" || command === "chatsay") {
+  if(command == "chatto") {
          message.delete()
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
     if(args[0] == "help"){
@@ -462,7 +462,7 @@ message.channel.send(say);
     .addField("Moderation", "`clear` `say` `newvideo - nv` `youtubechannel - ytc` `chatto` `annto` ")
     .addField("Info", "`serverinfo`  `serverrule`  `inviteslist` `dev`")
     .addField("General", "`ping` `avatar` `emojilist` ")
-    .addField("Fun", "`bond` `meme`  `status`  `get`  `random`")
+    .addField("Fun", "`bond` `meme`  `status`  `get`  `random`  `gif`")
     .setFooter(`Requested by : ${message.author.tag}`);
 
     return message.channel.send(serverEmbed);
@@ -509,7 +509,7 @@ if(command === "dev" || command === "developer") {
     })
     const embed = new Discord.RichEmbed()
         .setColor(0xCB5A5E)
-        .addField('<:trophyrd:447240380086222858> Leaderboard <:trophyrd:447240380086222858>', `\`\`\`${table.table(possibleInvites)}\`\`\``);
+        .addField(' Leaderboard ', `\`\`\`${table.table(possibleInvites)}\`\`\``);
     send(message.channel, embed, {
         name: 'Server Invites',
         icon: 'https://image.flaticon.com/icons/png/512/262/262831.png'
