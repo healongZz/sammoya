@@ -150,9 +150,9 @@ message.channel.send(say);
       message.react("446258205333520384");
  }
 
-    if(command === "setwatching" || command === "sw") {
+    if(command === "setplaying" || command === "sp") {
    //  if (message.author.id !== ('356510829920780289')) return message.channel.send("**You Can\'t Change Watching BOT | Dev is • TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881**").then(msg => msg.delete(8000));
- if (!['356510829920780289', '424916247696900135',].includes(message.author.id)) return message.reply(`Sorry U Dont Have Permission To Do This Command Only Dev lets do +++dev for see who is dev`).then(msg => msg.delete(9000));   
+ if (!['356510829920780289', '455087193178898452'].includes(message.author.id)) return message.reply(`Sorry U Dont Have Permission To Do This Command Only Dev lets do +++dev for see who is dev`).then(msg => msg.delete(9000));   
     const status = args.join(' ');
      if (status.length === 0) {
        const embed = new Discord.RichEmbed()
@@ -163,10 +163,10 @@ message.channel.send(say);
   }
   
     else if (status.length !== 0) {
-    client.user.setActivity(`${status}`, {  type: "WATCHING"});
+    client.user.setActivity(`${status}`, {  type: "PLAYING"});
     const embed = new Discord.RichEmbed()
       .setColor("#7289DA")
-      .setDescription(`**${message.author.tag}** You Sucessfully Changed Watching  •  **${status}** !`);
+      .setDescription(`**${message.author.tag}** You Sucessfully Changed PLAYING  •  **${status}** !`);
     message.channel.send({ embed });
     message.delete(5000);
   }};
@@ -470,7 +470,7 @@ message.channel.send(say);
 if(command === "dev" || command === "developer") {
   const dev = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .addField(`BOT DEVELOPER :`, "• steven#2009\n• TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
+  .addField(`BOT DEVELOPER :`, "• steven#2006\n• TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
   //.addField(`• Facebook`, "[CLICK HERE TO VIEW](https://www.facebook.com/tamotoji168)")
  // .addField(`• Discord`, "[CLICK HERE TO VIEW](https://discord.gg/ZWWD7zT)")
  // .setImage("https://cdn.discordapp.com/attachments/446881833213231105/447046532814995456/TAMOTOJI-PROFILE.jpg")
@@ -506,7 +506,7 @@ if(args[0] == "help"){
   let username = args[0]; 
   let videoURL = args[1];
  
-    send(message.channel, `<:Pin1:447234642785992704> @here\n\n<:sparkles_fiery:447631785682010150>Username • **${username}** Has Upload Video From YouTube !<:sparkles_fiery:447631785682010150>\n\n${videoURL} __**Go Check Now**__`, {
+    send(message.channel, ` @here\n\n<:sparkles_fiery:447631785682010150>Username • **${username}** Has Upload Video From YouTube !<:sparkles_fiery:447631785682010150>\n\n${videoURL} __**Go Check Now**__`, {
         name: 'YouTube',
         icon: 'https://cdn.discordapp.com/attachments/434019301448613908/447626767222439947/image.jpg'
      
