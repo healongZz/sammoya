@@ -20,7 +20,7 @@ hook.send(`📡 **RD-BOT** • Restarting Successfully... !`);
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag} on ${client.guilds.size} Servers ..`);
-    client.user.setActivity(`${config.prefix}help`, { type: 'WATCHING' })
+    client.user.setActivity(`${client.guild.memberCount} user`, { type: 'WATCHING' })
    //client.user.setActivity(`${client.guilds.size} SERVER`, { type: 'WATCHING' })
   });
 
