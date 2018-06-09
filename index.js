@@ -100,6 +100,7 @@ client.on("message", async message => {
 }
 
    if(command == "annto") {
+         message.delete()
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
     if(args[0] == "help"){
     message.reply("```Create #annoucements first and do +++annto on the channel you want message sand to #announcements```");
@@ -112,10 +113,11 @@ client.on("message", async message => {
 
    }
 
-   if(command == "chatto") {
+   if(command == "chatto" || command === "chatsay") {
+         message.delete()
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
     if(args[0] == "help"){
-    message.reply("```Create #annoucements first and do +++chatto on the channel you want message sand to #chatto```");
+    message.reply("```Create #chat first and do +++chatto on the channel you want message sand to #chat```");
     return;
   }
     let chatchannel = message.guild.channels.find(`name`, "chat");
