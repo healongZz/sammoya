@@ -32,6 +32,27 @@ client.on("guildCreate", async guild => {
 
 });
 
+client.on("guildMemberAdd", async member => {
+    let memberjoin = member.guild.channels.find('name', "new-member");
+const embed = new Discord.RichEmbed()
+.setThumbnail(member.user.avatarURL)
+.setColor('#1f49a1')
+.setFooter('🔵 MEMBER JOIN !')
+.setTimestamp()
+    .setDescription(`**[ ${member} ]** \nWELCOME TO **${member.guild.name}** SERVER  , YOU ARE A MEMBER : **${member.guild.memberCount}**\n• You Want To Help Please Content Server Owner : **${member.guild.owner.user.tag}** `);
+memberjoin.sendEmbed(embed);
+});   
+
+client.on("guildMemberRemove", async member => {
+    let memberjoin = member.guild.channels.find('name', "new-member");
+const embed = new Discord.RichEmbed()
+.setThumbnail(member.user.avatarURL)
+.setColor('#FF0000')
+.setFooter('🔴 MEMBER LEFT !')
+.setTimestamp()
+    .setDescription(`**[ ${member} ]** HAS LEFT **${member.guild.name}** SERVER  , THE SERVER NOW : **${member.guild.memberCount}** USER ! `);
+memberjoin.send(embed);
+});    
 
 client.on("message", async message => {
     if(message.author.bot) return;
