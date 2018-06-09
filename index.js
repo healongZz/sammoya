@@ -117,7 +117,7 @@ client.on("message", async message => {
     message.delete(6000);
      const newemb = new Discord.RichEmbed()
       .setColor('RANDOM')
-      .setTitle(`<:missiles:446258205333520384> Pong | ${Date.now() - message.createdTimestamp} ms`)
+      .setTitle(`🎾 Pong | ${Date.now() - message.createdTimestamp} ms`)
       .setFooter(`Requested by ${message.author.username}`)
       message.channel.send({embed: newemb}).then(message => message.delete(7002));
       message.react("446258205333520384");
@@ -339,7 +339,7 @@ client.on("message", async message => {
     
 }
 
-  if (command === "ign") {
+  if (command === "ignn") {
   message.delete();
     if(args[0] == "help"){
   const help = new Discord.RichEmbed()
@@ -412,10 +412,10 @@ client.on("message", async message => {
     const serverEmbed = new Discord.RichEmbed()
     .setAuthor(`${config.prefix}commands`, message.author.avatarURL)
     .setColor('#FF0000')
-    .addField("Moderation", "`clear` `say` `newvideo-nv` `youtubechannel-ytc` `chatto` `annto` `dpto`")
-    .addField("Info", "`serverinfo` `serverrule` `servconnect` `topinvites` `developer-dev`")
-    .addField("General", "`ping` `avatar` `emojilist` `get` `random` `status` `bond`")
-    .addField("Fun", "`lewd` `meme`")
+    .addField("Moderation", "`clear` `say` `newvideo - nv` `youtubechannel - ytc` `chatto` `annto` ")
+    .addField("Info", "`serverinfo`  `serverrule`  `topinvites` `dev`")
+    .addField("General", "`ping` `avatar` `emojilist` ")
+    .addField("Fun", "`bonf` `meme`  `status`  `get`  `ranfom`")
     .setFooter(`Requested by : ${message.author.tag}`);
 
     return message.channel.send(serverEmbed);
@@ -443,9 +443,9 @@ client.on("message", async message => {
 if(command === "dev" || command === "developer") {
   const dev = new Discord.RichEmbed()
   .setColor('RANDOM')
-  .addField(`BOT CREATE BY`, "• §VanTer§#9021\n• TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
-  .addField(`• Facebook`, "[CLICK HERE TO VIEW](https://www.facebook.com/tamotoji168)")
-  .addField(`• Discord`, "[CLICK HERE TO VIEW](https://discord.gg/ZWWD7zT)")
+  .addField(`BOT DEVELOPER :`, "• steven#2009\n• TaMoToJiᵛᵉʳᶦᶠᶦᵉᵈ林坓龙#5881")
+  //.addField(`• Facebook`, "[CLICK HERE TO VIEW](https://www.facebook.com/tamotoji168)")
+ // .addField(`• Discord`, "[CLICK HERE TO VIEW](https://discord.gg/ZWWD7zT)")
  // .setImage("https://cdn.discordapp.com/attachments/446881833213231105/447046532814995456/TAMOTOJI-PROFILE.jpg")
   message.channel.send(dev);
 }
@@ -506,7 +506,7 @@ if(args[0] == "help"){
 if(command === "serverrule") {
     const serverrule = new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setImage('https://cdn.discordapp.com/attachments/443665749656207360/445215855534407690/ServerRules-Mirai.png')
+  //  .setImage('https://cdn.discordapp.com/attachments/443665749656207360/445215855534407690/ServerRules-Mirai.png')
     .setDescription("**ServerRule :**\n\n1. No Bullying\n2. No Spamming\n3. No Aggressive Fighting\n4. No Threats\n5. No Racist or Offensive or Degrading Content\n6. No Begging or Repeated Asking\n7. Any Sort of Abuse is Not Allowed\n8. Use Appropriate Channels\n9. No Punishment Evading\n10. No Links That Are Evasive\n11. Staff Decisions Are Final\n\nMore Check #server-rule")   
     const pollTitle = await message.channel.send(serverrule);
       await pollTitle.react(`444878652090613763`);
@@ -575,13 +575,13 @@ if(command === "serverrule") {
 
 }
 
-  if(command === "ctc" || command === "createtextchannel") {
-  let logs = args.join(" ");
-  if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("**You do not have permission to do that!**");
-  message.guild.createChannel(logs, 'text');
-  message.channel.send(`✅ **${message.author.username}** Has Create Text Channel **${logs}**`).then(msg => msg.delete(8000));
+  //if(command === "ctc" || command === "createtextchannel") {
+ // let logs = args.join(" ");
+ // if(!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("**You do not have permission to do that!**");
+ // message.guild.createChannel(logs, 'text');
+ // message.channel.send(`✅ **${message.author.username}** Has Create Text Channel **${logs}**`).then(msg => msg.delete(8000));
 
-}
+//}
 
 });
 
