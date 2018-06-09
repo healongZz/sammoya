@@ -13,6 +13,7 @@ const encode = require('strict-uri-encode');
 const snekfetch = require('snekfetch');
 const superagent = require("superagent");
 const meme = require('memejs');
+const gifSearch = require("gif-search");
 
 const hook = new Discord.WebhookClient('447643495528923146', 'Bendsxen4drwRTJVLOM5f9_Ns0gfPYkWPdOABYo8pJahGi0jKX5ZgWQWwvL85xcESUAi');
 
@@ -59,6 +60,23 @@ client.on("message", async message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase(); 
 
+       if(command === "gif") {
+  if (message.author.bot) return;
+  if (message.channel.type == "dm") return;
+
+    if (!args[0]) return message.channel.send("`"+config.prefix+"gif <gname>`");
+
+    gifSearch.random(args[0]).then(
+        gifUrl => {
+
+        let randomcolor = ((1 << 24) * Math.random() | 0).toString(16) //Optional
+        var embed = new Discord.RichEmbed()
+            .setColor(`#${randomcolor}`)
+            .setImage(gifUrl)
+        message.channel.send(embed);
+    });
+ }
+      
    if(command === "status" ) {
    // if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`You Don\'t have permissions **Manage Message** To Use This Commands`);
     if(!args[0]) {
