@@ -411,7 +411,7 @@ client.on("message", async message => {
    if(command === "help") {
     const serverEmbed = new Discord.RichEmbed()
     .setAuthor(`${config.prefix}commands`, message.author.avatarURL)
-    .setColor('#FF0000')
+    .setColor('#FFE8A0')
     .addField("Moderation", "`clear` `say` `newvideo - nv` `youtubechannel - ytc` `chatto` `annto` ")
     .addField("Info", "`serverinfo`  `serverrule`  `topinvites` `dev`")
     .addField("General", "`ping` `avatar` `emojilist` ")
