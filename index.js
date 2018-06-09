@@ -157,7 +157,7 @@ message.channel.send(say);
      if (status.length === 0) {
        const embed = new Discord.RichEmbed()
          .setColor('RANDOM')
-         .setDescription(`${config.prefix}setwatching [status]!`);
+         .setDescription(`${config.prefix}setplaying [status]!`);
        message.channel.send({ embed });
        message.delete(500)
   }
