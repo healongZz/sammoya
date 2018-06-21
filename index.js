@@ -15,9 +15,9 @@ const superagent = require("superagent");
 const meme = require('memejs');
 const gifSearch = require("gif-search");
 
-const hook = new Discord.WebhookClient('447643495528923146', 'Bendsxen4drwRTJVLOM5f9_Ns0gfPYkWPdOABYo8pJahGi0jKX5ZgWQWwvL85xcESUAi');
+//const hook = new Discord.WebhookClient('447643495528923146', 'Bendsxen4drwRTJVLOM5f9_Ns0gfPYkWPdOABYo8pJahGi0jKX5ZgWQWwvL85xcESUAi');
 
-hook.send(`📡 **RD-BOT** • Restarting Successfully... !`);
+//hook.send(`📡 **RD-BOT** • Restarting Successfully... !`);
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag} on ${client.guilds.size} Servers ..`);
